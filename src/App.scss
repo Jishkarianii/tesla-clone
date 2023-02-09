@@ -1,3 +1,15 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Gotham SSm";
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Gotham SSm";
+  src: url(./fonts/GothamSSm-Medium_Web.woff2);
+}
+
+img {
+  width: 100%;
 }

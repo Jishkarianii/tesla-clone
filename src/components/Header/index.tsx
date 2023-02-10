@@ -5,8 +5,8 @@ function Header() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const menuHandler = (): void => {
-    setIsOpen(!isOpen)
-  }
+    setIsOpen(!isOpen);
+  };
 
   return (
     <header className="header">
@@ -16,8 +16,13 @@ function Header() {
           fill="currentColor"
         ></path>
       </svg>
-      <div className="header-menu" onClick={menuHandler}>Menu</div>
-      <div className={`header-menu-bg ${isOpen ? "show" : ""}`}></div>
+      <div className="header-menu" onClick={menuHandler}>
+        Menu
+      </div>
+      <div
+        className={`header-menu-bg ${isOpen ? "show" : ""}`}
+        onClick={menuHandler}
+      ></div>
       <div className={`header-menu-cont ${isOpen ? "open" : ""}`}>
         <div className="close-cont">
           <div className="close-wrapper" onClick={menuHandler}>
@@ -34,10 +39,18 @@ function Header() {
           </div>
         </div>
         <ul>
-          <li title="Model S" onClick={menuHandler}>Model S</li>
-          <li title="Model 3" onClick={menuHandler}>Model 3</li>
-          <li title="Model X" onClick={menuHandler}>Model X</li>
-          <li title="Model Y" onClick={menuHandler}>Model Y</li>
+          <li title="Model S" onClick={menuHandler}>
+            Model S
+          </li>
+          <li title="Model 3" onClick={menuHandler}>
+            Model 3
+          </li>
+          <li title="Model X" onClick={menuHandler}>
+            Model X
+          </li>
+          <li title="Model Y" onClick={menuHandler}>
+            Model Y
+          </li>
         </ul>
       </div>
     </header>

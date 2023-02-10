@@ -1,0 +1,31 @@
+.main-swiper-item {
+  height: 100%;
+
+  .main-swiper-item-bg-cont {
+    height: 100%;
+
+    .main-swiper-item-bg {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .main-swiper-item {
+    .main-swiper-item-bg-cont {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      overflow: hidden;
+
+      .main-swiper-item-bg {
+        width: 210%;
+        height: 100%;
+        object-fit: fill;
+      }
+    }
+  }
+}

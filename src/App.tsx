@@ -1,11 +1,12 @@
 import './App.scss';
 import Header from './components/Header';
+import MainPage from './pages/MainPage';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <img src="./assets/Model3/Homepage-Model-3.jpg" alt="tesla" />
+      <MainPage />
     </div>
   );
 }

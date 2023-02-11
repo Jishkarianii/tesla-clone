@@ -76,14 +76,18 @@ function MainSwiperInner({ activeIndex }: Props) {
   }, [activeIndex]);
 
   return (
-    <div className="main-swiper-item-inner-cont">
-      <div className="main-swiper-item-inner-cont-title">
-        <Fade direction="up">
-          <h2 className={`${isHide && "hide"}`}>{swiperData[index].carName}</h2>
-        </Fade>
-        <Fade direction="up" delay={600}>
-          <p className={`${isHide && "hide"}`}>{swiperData[index].subText}</p>
-        </Fade>
+    <>
+      <div className="main-swiper-item-inner-cont">
+        <div className="main-swiper-item-inner-cont-title">
+          <Fade direction="up">
+            <h2 className={`${isHide && "hide"}`}>
+              {swiperData[index].carName}
+            </h2>
+          </Fade>
+          <Fade direction="up" delay={600}>
+            <p className={`${isHide && "hide"}`}>{swiperData[index].subText}</p>
+          </Fade>
+        </div>
       </div>
       <div className="main-swiper-item-inner-cont-bottom">
         <div className="main-swiper-item-inner-cont-bottom-btns">
@@ -116,7 +120,7 @@ function MainSwiperInner({ activeIndex }: Props) {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 }
 

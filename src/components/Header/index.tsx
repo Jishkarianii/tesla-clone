@@ -1,8 +1,15 @@
 import "./style.scss";
 import { useState } from "react";
+import { useSwiper } from "swiper/react";
 
 function Header() {
+  const swiper = useSwiper();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const slideTo = (index: number): void => {
+    swiper.slideTo(index);
+    menuHandler()
+  }
 
   const menuHandler = (): void => {
     setIsOpen(!isOpen);
@@ -39,17 +46,17 @@ function Header() {
           </div>
         </div>
         <ul>
-          <li title="Model S" onClick={menuHandler}>
-            Model S
-          </li>
-          <li title="Model 3" onClick={menuHandler}>
+          <li title="Model 3" onClick={() => slideTo(0)}>
             Model 3
           </li>
-          <li title="Model X" onClick={menuHandler}>
-            Model X
-          </li>
-          <li title="Model Y" onClick={menuHandler}>
+          <li title="Model Y" onClick={() => slideTo(1)}>
             Model Y
+          </li>
+          <li title="Model S" onClick={() => slideTo(2)}>
+            Model S
+          </li>
+          <li title="Model X" onClick={() => slideTo(3)}>
+            Model X
           </li>
         </ul>
       </div>

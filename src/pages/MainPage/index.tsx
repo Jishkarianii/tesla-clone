@@ -2,15 +2,16 @@ import "./style.scss";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Scrollbar } from 'swiper';
+import { Mousewheel, Scrollbar } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
-import 'swiper/css/scrollbar';
+import "swiper/css/scrollbar";
 
 import { useEffect, useState, useRef } from "react";
 import MainSwiperItem from "../../components/MainSwiperItem";
 import MainSwiperInner from "../../components/MainSwiperInner";
+import Header from "../../components/Header";
 
 interface SwiperItem {
   img: string;
@@ -28,11 +29,11 @@ function MainPage() {
   const [activeIndex, setactiveIndex] = useState<number>(0);
 
   useEffect(() => {
-    if (didMountRef.current) { 
-      document.querySelectorAll(".swiper-scrollbar-drag")[0].remove()
+    if (didMountRef.current) {
+      document.querySelectorAll(".swiper-scrollbar-drag")[0].remove();
     }
     didMountRef.current = true;
-  }, [])
+  }, []);
 
   return (
     <div className="main-swiper-page">
@@ -47,11 +48,10 @@ function MainPage() {
           setactiveIndex(e.activeIndex);
         }}
       >
+        <Header />
         {swiperItems.map((item, idx) => (
           <SwiperSlide key={idx}>
-            <MainSwiperItem 
-                img={item.img}
-            />
+            <MainSwiperItem img={item.img} />
           </SwiperSlide>
         ))}
         <MainSwiperInner activeIndex={activeIndex} />

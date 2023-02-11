@@ -1,59 +1,61 @@
 import "./style.scss";
 
-import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel, Scrollbar } from 'swiper';
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css/scrollbar';
 
-// import required modules
-import { Pagination } from "swiper";
+import { useEffect, useState, useRef } from "react";
 import MainSwiperItem from "../../components/MainSwiperItem";
-import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
-import Button from "../../components/Button";
+import MainSwiperInner from "../../components/MainSwiperInner";
+
+interface SwiperItem {
+  img: string;
+}
+
+const swiperItems: SwiperItem[] = [
+  { img: "./assets/Model3/Homepage-Model-3.jpg" },
+  { img: "./assets/ModelY/Homepage-Model-Y.jpg" },
+  { img: "./assets/ModelS/Homepage-Model-S.jpg" },
+  { img: "./assets/ModelX/Homepage-Model-X.jpg" },
+];
 
 function MainPage() {
+  const didMountRef = useRef<boolean>(false);
+  const [activeIndex, setactiveIndex] = useState<number>(0);
+
+  useEffect(() => {
+    if (didMountRef.current) { 
+      document.querySelectorAll(".swiper-scrollbar-drag")[0].remove()
+    }
+    didMountRef.current = true;
+  }, [])
+
   return (
     <div className="main-swiper-page">
       <Swiper
         className="main-page-swiper"
         direction={"vertical"}
-        pagination={{
-          clickable: true,
+        mousewheel
+        speed={1000}
+        scrollbar={{ draggable: true }}
+        modules={[Mousewheel, Scrollbar]}
+        onSlideChange={(e) => {
+          setactiveIndex(e.activeIndex);
         }}
-        modules={[Pagination]}
       >
-        <SwiperSlide>
-          <MainSwiperItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MainSwiperItem />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MainSwiperItem />
-        </SwiperSlide>
+        {swiperItems.map((item, idx) => (
+          <SwiperSlide key={idx}>
+            <MainSwiperItem 
+                img={item.img}
+            />
+          </SwiperSlide>
+        ))}
+        <MainSwiperInner activeIndex={activeIndex} />
       </Swiper>
-      <div className="main-swiper-item-inner-cont">
-        <div className="main-swiper-item-inner-cont-title">
-          <h2>Model 3</h2>
-          <p>Leasing starting at $349/mo</p>
-        </div>
-        <div className="main-swiper-item-inner-cont-bottom">
-          <div className="main-swiper-item-inner-cont-bottom-btns">
-            <Button width="264px" option="black" action={() => null}>
-              Custom Order
-            </Button>
-            <Button width="264px" option="gray" action={() => null}>
-              Demo Drive
-            </Button>
-          </div>
-          <div className="main-swiper-item-inner-cont-bottom-arrow">
-            <ExpandMoreRoundedIcon />
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

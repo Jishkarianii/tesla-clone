@@ -1,19 +1,20 @@
 import "./style.scss";
 
 interface Props {
+  className: string;
   children: string;
   width: string;
   option: string;
   action: () => void;
 }
 
-function Button({ children, width, option, action }: Props) {
+function Button({ className, children, width, option, action }: Props) {
   const STYLE =
     option === "black" ? "black" : option === "gray" ? "gray" : "blue";
 
   return (
     <button
-      className={`btn ${STYLE}`}
+      className={`btn ${className} ${STYLE}`}
       style={{ width }}
       onClick={action}
       title={children}

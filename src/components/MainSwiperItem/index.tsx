@@ -1,12 +1,16 @@
 import "./style.scss";
 
-function MainSwiperItem() {
+interface Props {
+  img: string;
+}
+
+function MainSwiperItem({ img }: Props) {
   return (
     <div className="main-swiper-item">
       <div className="main-swiper-item-bg-cont">
         <img
           className="main-swiper-item-bg"
-          src="./assets/Model3/Homepage-Model-3.jpg"
+          src={img}
           alt="tesla"
         />
       </div>

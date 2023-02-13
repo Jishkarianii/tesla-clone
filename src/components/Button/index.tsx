@@ -5,7 +5,7 @@ interface Props {
   children: string;
   width: string;
   option: string;
-  action: () => void;
+  action?: () => void;
 }
 
 function Button({ className, children, width, option, action }: Props) {

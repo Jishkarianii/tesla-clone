@@ -1,11 +1,10 @@
-import './App.scss';
-import Header from './components/Header';
-import MainPage from './pages/MainPage';
+import "./App.scss";
+import AppRouter from "./routes";
 
 function App() {
   return (
     <div className="App">
-      <MainPage />
+      <AppRouter />
     </div>
   );
 }

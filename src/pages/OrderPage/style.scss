@@ -1,0 +1,366 @@
+.order-page {
+  height: 100vh;
+
+  .order-page-swipers-cont {
+    display: flex;
+
+    .order-page-swipers-wrapper {
+      position: relative;
+
+      .main-swiper {
+        margin: 0;
+        height: 100vh;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+          padding: 10px;
+          width: 18px;
+          height: 8px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #171a20;
+          font-size: 16px;
+          font-weight: bold;
+          border-radius: 4px;
+          background-color: #eee;
+        }
+
+        .swiper-button-prev {
+          margin-left: -10px;
+          transition: 0.4s;
+          opacity: 0;
+        }
+
+        .swiper-button-next {
+          margin-right: -10px;
+          transition: 0.4s;
+          opacity: 0;
+        }
+
+        &:hover .swiper-button-prev {
+          margin-left: 25px;
+          opacity: 1;
+        }
+
+        &:hover .swiper-button-next {
+          margin-right: 25px;
+          opacity: 1;
+        }
+      }
+
+      .main-swiper-vehicle-price-cont {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        padding: 17px 35px 17px 20px;
+        transform: translate(-50%);
+        display: flex;
+        align-items: center;
+        border-radius: 16px 16px 0 0;
+        background-color: #f4f4f4;
+        z-index: 99;
+
+        .main-swiper-vehicle-price-cont-icon {
+          width: 32px;
+          height: 32px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          background-color: #fff;
+          filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+
+          svg {
+            fill: #3b3e43;
+          }
+        }
+
+        .main-swiper-vehicle-price {
+          padding-left: 20px;
+          color: #393c41;
+          font-size: 14px;
+        }
+      }
+
+      .options-swiper {
+        margin: 0;
+        width: 415px;
+        height: 100vh;
+
+        .options-swiper-slide {
+          position: relative;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #171a20;
+          text-align: center;
+
+          .options-swiper-slide-intro {
+            h2 {
+              font-size: 40px;
+              font-weight: 400;
+            }
+
+            .delivery {
+              padding-top: 12px;
+              color: #393c41;
+              font-size: 14px;
+            }
+
+            .specifications-cont {
+              padding-top: 35px;
+              padding-bottom: 45px;
+              display: grid;
+              grid-template-columns: 100px 100px 100px;
+              gap: 20px;
+
+              p {
+                font-size: 24px;
+                padding-bottom: 8px;
+
+                span {
+                  font-size: 14px;
+                }
+              }
+
+              span {
+                color: #5c5e62;
+                font-size: 12px;
+              }
+            }
+
+            .btn {
+              font-size: 12px;
+            }
+          }
+
+          .options-swiper-cont-bottom-arrow {
+            position: absolute;
+            bottom: 30px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+
+            svg {
+              width: 32px;
+              height: 32px;
+              animation: arrow-anim 1.2s ease-in infinite;
+            }
+          }
+        }
+
+        .options-swiper-slide-paint {
+          h3 {
+            font-size: 28px;
+            font-weight: 400;
+          }
+
+          .car-colors-cont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .color {
+              margin: 0 3px;
+              margin-top: 24px;
+              width: 54px;
+              height: 54px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+              cursor: pointer;
+
+              &.active {
+                border: 3.3px solid #3e6ae1;
+              }
+
+              img {
+                width: 40px;
+                height: 40px;
+              }
+            }
+          }
+
+          .color-name-price {
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+
+            span {
+              margin-left: 10px;
+              color: #393c41;
+              font-weight: 400;
+            }
+          }
+        }
+
+        .options-swiper-slide-wheels {
+          h3 {
+            font-size: 28px;
+            font-weight: 400;
+          }
+
+          .car-wheels-cont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .wheel {
+              margin: 0 3px;
+              margin-top: 24px;
+              width: 54px;
+              height: 54px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+              cursor: pointer;
+
+              &.active {
+                border: 3.3px solid #3e6ae1;
+              }
+
+              img {
+                width: 40px;
+                height: 40px;
+              }
+            }
+          }
+
+          .wheel-name-price {
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+
+            span {
+              margin-left: 10px;
+              color: #393c41;
+              font-weight: 400;
+            }
+          }
+
+          .more-info {
+            padding-top: 12px;
+            font-size: 12px;
+            color: #5c5e62;
+          }
+
+          .btn {
+            margin-top: 20px;
+            padding: 9px;
+            font-size: 12px;
+          }
+        }
+
+        .options-swiper-slide-interior {
+          h3 {
+            font-size: 28px;
+            font-weight: 400;
+          }
+
+          .car-interior-cont {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .interior {
+              margin: 0 3px;
+              margin-top: 24px;
+              width: 54px;
+              height: 54px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 50%;
+              cursor: pointer;
+
+              &.active {
+                border: 3.3px solid #3e6ae1;
+              }
+
+              img {
+                width: 40px;
+                height: 40px;
+              }
+            }
+          }
+
+          .interior-name-price {
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+
+            span {
+              margin-left: 10px;
+              color: #393c41;
+              font-weight: 400;
+            }
+          }
+
+          .btn {
+            margin-top: 20px;
+            padding: 9px;
+            font-size: 12px;
+          }
+        }
+
+        .options-swiper-slide-order {
+          h3 {
+            font-size: 28px;
+            font-weight: 400;
+          }
+
+          .delivery {
+            padding: 20px 0;
+            font-size: 14px;
+          }
+
+          .option-cont {
+            margin: 0 auto;
+            max-width: 288px;
+            text-align: left;
+            display: grid;
+            grid-template-columns: auto 256px;
+            gap: 8px;
+
+            svg {
+              fill: #12bb00;
+            }
+
+            p {
+              color: #393c41;
+              font-size: 14px;
+              line-height: 21px;
+              font-weight: 400;
+              margin-bottom: 4px;
+            }
+
+            span {
+              color: #393c41;
+              font-size: 14px;
+              font-weight: 400;
+              border-bottom: 1px solid #393c41;
+              cursor: pointer;
+            }
+          }
+
+          .btn {
+            margin-top: 50px;
+          }
+        }
+      }
+    }
+  }
+}

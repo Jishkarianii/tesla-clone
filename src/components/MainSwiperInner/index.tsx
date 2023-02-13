@@ -5,6 +5,7 @@ import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import { Fade } from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 import { Reveal } from "react-awesome-reveal";
+import ArrowDown from "../ArrowDown";
 
 const customLeft = keyframes`
   from {
@@ -113,11 +114,9 @@ function MainSwiperInner({ activeIndex }: Props) {
           </Reveal>
         </div>
         {activeIndex === 0 && (
-          <div className="main-swiper-item-inner-cont-bottom-arrow">
-            <Fade delay={1600}>
-              <ExpandMoreRoundedIcon />
-            </Fade>
-          </div>
+          <Fade delay={1600}>
+            <ArrowDown className="main-swiper-item-inner-cont-bottom-arrow" />
+          </Fade>
         )}
       </div>
     </>

@@ -44,44 +44,10 @@
     grid-template-columns: auto auto;
     gap: 25px;
   }
-
-  .main-swiper-item-inner-cont-bottom-arrow {
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
-
-    svg {
-      width: 32px;
-      height: 32px;
-      animation: arrow-anim 1.2s ease-in infinite;
-    }
-  }
 }
 
 .hide {
   opacity: 0;
-}
-
-@keyframes arrow-anim {
-  0% {
-    transform: translateY(0);
-  }
-
-  15% {
-    transform: translateY(8px);
-  }
-
-  30% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(5px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
 }
 
 @media screen and (max-width: 760px) {

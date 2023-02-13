@@ -1,7 +1,6 @@
 import "./style.scss";
 import { useEffect, useRef, useState } from "react";
 import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
-import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import CheckIcon from "@mui/icons-material/Check";
 
 // Import Swiper React components
@@ -16,6 +15,7 @@ import "swiper/css/effect-fade";
 import { Navigation, EffectFade, Mousewheel, Scrollbar } from "swiper";
 import Header from "../../components/Header";
 import Button from "../../components/Button";
+import ArrowDown from "../../components/ArrowDown";
 
 function OrderPage() {
   const mainSwiperRef = useRef<any>(null);
@@ -134,9 +134,7 @@ function OrderPage() {
                     Feature Details
                   </Button>
                 </div>
-                <div className="options-swiper-cont-bottom-arrow">
-                  <ExpandMoreRoundedIcon />
-                </div>
+                <ArrowDown className="options-swiper-cont-bottom-arrow" />
               </div>
             </SwiperSlide>
             <SwiperSlide>

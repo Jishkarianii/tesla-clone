@@ -16,6 +16,7 @@ import { Navigation, EffectFade, Mousewheel, Scrollbar } from "swiper";
 import Header from "../../components/Header";
 import Button from "../../components/Button";
 import ArrowDown from "../../components/ArrowDown";
+import { Fade } from "react-awesome-reveal";
 
 function OrderPage() {
   const mainSwiperRef = useRef<any>(null);
@@ -45,53 +46,55 @@ function OrderPage() {
     <div className="order-page">
       <Header />
       <div className="order-page-swipers-cont">
-        <div className="order-page-main-swipers-wrapper">
-          <Swiper
-            className="main-swiper"
-            ref={mainSwiperRef}
-            loop={true}
-            effect="fade"
-            navigation={true}
-            modules={[Navigation, EffectFade]}
-          >
-            <SwiperSlide>
-              <img
-                src="../assets/Model3/slide-1-blue-aero-black.jpg"
-                alt="tesla"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src="../assets/Model3/slide-2-blue-aero-black.jpg"
-                alt="tesla"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src="../assets/Model3/slide-3-blue-aero-black.jpg"
-                alt="tesla"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src="../assets/Model3/slide-4-blue-aero-black.jpg"
-                alt="tesla"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img
-                src="../assets/Model3/slide-5-blue-aero-black.jpg"
-                alt="tesla"
-              />
-            </SwiperSlide>
-          </Swiper>
-          <div className="main-swiper-vehicle-price-cont">
-            <div className="main-swiper-vehicle-price-cont-icon">
-              <KeyboardArrowUpRoundedIcon />
+        <Fade>
+          <div className="order-page-main-swipers-wrapper">
+            <Swiper
+              className="main-swiper"
+              ref={mainSwiperRef}
+              loop={true}
+              effect="fade"
+              navigation={true}
+              modules={[Navigation, EffectFade]}
+            >
+              <SwiperSlide>
+                <img
+                  src="../assets/Model3/slide-1-blue-aero-black.jpg"
+                  alt="tesla"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src="../assets/Model3/slide-2-blue-aero-black.jpg"
+                  alt="tesla"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src="../assets/Model3/slide-3-blue-aero-black.jpg"
+                  alt="tesla"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src="../assets/Model3/slide-4-blue-aero-black.jpg"
+                  alt="tesla"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src="../assets/Model3/slide-5-blue-aero-black.jpg"
+                  alt="tesla"
+                />
+              </SwiperSlide>
+            </Swiper>
+            <div className="main-swiper-vehicle-price-cont">
+              <div className="main-swiper-vehicle-price-cont-icon">
+                <KeyboardArrowUpRoundedIcon />
+              </div>
+              <p className="main-swiper-vehicle-price">$42,990 Vehicle Price</p>
             </div>
-            <p className="main-swiper-vehicle-price">$42,990 Vehicle Price</p>
           </div>
-        </div>
+        </Fade>
         <div className="order-page-options-swipers-wrapper">
           <Swiper
             className="options-swiper"
@@ -107,33 +110,35 @@ function OrderPage() {
           >
             <SwiperSlide>
               <div className="options-swiper-slide">
-                <div className="options-swiper-slide-intro">
-                  <h2>Model 3</h2>
-                  <p className="delivery">Est. Delivery: Feb - Mar 2023</p>
-                  <div className="specifications-cont">
-                    <div>
-                      <p>
-                        272<span>mi</span>
-                      </p>
-                      <span>Range (EPA est.)</span>
+                <Fade direction="up">
+                  <div className="options-swiper-slide-intro">
+                    <h2>Model 3</h2>
+                    <p className="delivery">Est. Delivery: Feb - Mar 2023</p>
+                    <div className="specifications-cont">
+                      <div>
+                        <p>
+                          272<span>mi</span>
+                        </p>
+                        <span>Range (EPA est.)</span>
+                      </div>
+                      <div>
+                        <p>
+                          140<span>mph</span>
+                        </p>
+                        <span>Top Speed</span>
+                      </div>
+                      <div>
+                        <p>
+                          5.8<span>sec</span>
+                        </p>
+                        <span>0-60 mph</span>
+                      </div>
                     </div>
-                    <div>
-                      <p>
-                        140<span>mph</span>
-                      </p>
-                      <span>Top Speed</span>
-                    </div>
-                    <div>
-                      <p>
-                        5.8<span>sec</span>
-                      </p>
-                      <span>0-60 mph</span>
-                    </div>
+                    <Button className="btn" width="145px" option="gray">
+                      Feature Details
+                    </Button>
                   </div>
-                  <Button className="btn" width="145px" option="gray">
-                    Feature Details
-                  </Button>
-                </div>
+                </Fade>
                 <ArrowDown className="options-swiper-cont-bottom-arrow" />
               </div>
             </SwiperSlide>

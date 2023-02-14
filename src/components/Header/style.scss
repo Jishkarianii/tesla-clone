@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 999;
-  
+
   &.secondary {
     padding: 11px 35px;
     width: calc(100% - 10px);
@@ -34,7 +34,7 @@
     padding: 4px 8px;
     display: flex;
     align-items: center;
-    color: #3D4045;
+    color: #3d4045;
     font-size: 14px;
     border-radius: 4px;
     transition: 0.4s;
@@ -46,7 +46,7 @@
 
     svg {
       margin-right: 6px;
-      fill: #3D4045;
+      fill: #3d4045;
     }
   }
 
@@ -125,6 +125,14 @@
           background-color: rgba(0, 0, 0, 0.05);
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1225px) {
+  .header {
+    &.secondary {
+      width: 100%;
     }
   }
 }

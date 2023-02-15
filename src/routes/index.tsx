@@ -7,7 +7,7 @@ function AppRouter() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/order/:model" element={<OrderPage />} />
+        <Route path="/order/:carId" element={<OrderPage />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>

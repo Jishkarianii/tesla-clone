@@ -6,6 +6,7 @@ import { Fade } from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 import { Reveal } from "react-awesome-reveal";
 import ArrowDown from "../ArrowDown";
+import { useNavigate } from "react-router-dom";
 
 const customLeft = keyframes`
   from {
@@ -34,24 +35,29 @@ const customRight = keyframes`
 interface SwiperData {
   carName: string;
   subText?: string;
+  link: number;
 }
 
 const swiperData: SwiperData[] = [
   {
     carName: "Model 3",
     subText: "Leasing starting at $349/mo",
+    link: 0,
   },
   {
     carName: "Model Y",
     subText: "",
+    link: 1,
   },
   {
     carName: "Model S",
     subText: "Schedule a Demo Drive",
+    link: 2,
   },
   {
     carName: "Model X",
     subText: "Schedule a Demo Drive",
+    link: 3,
   },
 ];
 
@@ -60,6 +66,7 @@ interface Props {
 }
 
 function MainSwiperInner({ activeIndex }: Props) {
+  const navigate = useNavigate();
   const didMountRef = useRef<number>(0);
   const [index, setIndex] = useState<number>(activeIndex);
   const [isHide, setIsHide] = useState<boolean>(false);
@@ -75,6 +82,10 @@ function MainSwiperInner({ activeIndex }: Props) {
     }
     didMountRef.current++;
   }, [activeIndex]);
+
+  const navigateHandler = (): void => {
+    navigate(`/order/${swiperData[activeIndex].link}`);
+  };
 
   return (
     <>
@@ -97,7 +108,7 @@ function MainSwiperInner({ activeIndex }: Props) {
               className={`${isHide && "hide"}`}
               width="264px"
               option="black"
-              action={() => null}
+              action={navigateHandler}
             >
               Custom Order
             </Button>

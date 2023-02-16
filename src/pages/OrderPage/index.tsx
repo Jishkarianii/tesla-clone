@@ -18,6 +18,7 @@ import Button from "../../components/Button";
 import ArrowDown from "../../components/ArrowDown";
 import { Fade } from "react-awesome-reveal";
 import { useParams } from "react-router-dom";
+import SlideToOrderSwiper from "../../components/SlideToOrderSwiper";
 
 interface TeslaType {
   model: string;
@@ -336,7 +337,8 @@ function OrderPage() {
   const [car, setCar] = useState<TeslaType>();
   const mainSwiperRef = useRef<any>(null);
   const didMountRef = useRef<boolean>(false);
-  const [activeIndex, setactiveIndex] = useState<number>(0);
+  const [mainSwiperIdX, setMainSwiperIdX] = useState<number>(0);
+  const [sideSwiperIdX, setSideSwiperIdX] = useState<number>(0);
   const [images, setImages] = useState<ImagesType[]>();
   const [paint, setPaint] = useState<string>("white");
   const [wheels, setWheels] = useState<string>("first");
@@ -348,68 +350,216 @@ function OrderPage() {
     if (carId) {
       const idx = parseInt(carId);
 
-      if (interior === "black" && wheels === "first" &&  paint === "white") {
-        setPrice(tesla[idx].price + tesla[idx].salon.black.cost + tesla[idx].wheels[0].cost + tesla[idx].paint.white.cost)
-      } else if (interior === "black" && wheels === "first" &&  paint === "blue") {
-        setPrice(tesla[idx].price + tesla[idx].salon.black.cost + tesla[idx].wheels[0].cost + tesla[idx].paint.blue.cost)
-      } else if (interior === "black" && wheels === "first" &&  paint === "red") {
-        setPrice(tesla[idx].price + tesla[idx].salon.black.cost + tesla[idx].wheels[0].cost + tesla[idx].paint.red.cost)
-      } else if (interior === "black" && wheels === "second" &&  paint === "white") {
-        setPrice(tesla[idx].price + tesla[idx].salon.black.cost + tesla[idx].wheels[1].cost + tesla[idx].paint.white.cost)
-      } else if (interior === "black" && wheels === "second" &&  paint === "blue") {
-        setPrice(tesla[idx].price + tesla[idx].salon.black.cost + tesla[idx].wheels[1].cost + tesla[idx].paint.blue.cost)
-      } else if (interior === "black" && wheels === "second" &&  paint === "red") {
-        setPrice(tesla[idx].price + tesla[idx].salon.black.cost + tesla[idx].wheels[1].cost + tesla[idx].paint.red.cost)
-      } else if (interior === "white" && wheels === "first" &&  paint === "white") {
-        setPrice(tesla[idx].price + tesla[idx].salon.white.cost + tesla[idx].wheels[0].cost + tesla[idx].paint.white.cost)
-      } else if (interior === "white" && wheels === "first" &&  paint === "blue") {
-        setPrice(tesla[idx].price + tesla[idx].salon.white.cost + tesla[idx].wheels[0].cost + tesla[idx].paint.blue.cost)
-      } else if (interior === "white" && wheels === "first" &&  paint === "red") {
-        setPrice(tesla[idx].price + tesla[idx].salon.white.cost + tesla[idx].wheels[0].cost + tesla[idx].paint.red.cost)
-      } else if (interior === "white" && wheels === "second" &&  paint === "white") {
-        setPrice(tesla[idx].price + tesla[idx].salon.white.cost + tesla[idx].wheels[1].cost + tesla[idx].paint.white.cost)
-      } else if (interior === "white" && wheels === "second" &&  paint === "blue") {
-        setPrice(tesla[idx].price + tesla[idx].salon.white.cost + tesla[idx].wheels[1].cost + tesla[idx].paint.blue.cost)
-      } else if (interior === "white" && wheels === "second" &&  paint === "red") {
-        setPrice(tesla[idx].price + tesla[idx].salon.white.cost + tesla[idx].wheels[1].cost + tesla[idx].paint.red.cost)
+      if (interior === "black" && wheels === "first" && paint === "white") {
+        setPrice(
+          tesla[idx].price +
+            tesla[idx].salon.black.cost +
+            tesla[idx].wheels[0].cost +
+            tesla[idx].paint.white.cost
+        );
+      } else if (
+        interior === "black" &&
+        wheels === "first" &&
+        paint === "blue"
+      ) {
+        setPrice(
+          tesla[idx].price +
+            tesla[idx].salon.black.cost +
+            tesla[idx].wheels[0].cost +
+            tesla[idx].paint.blue.cost
+        );
+      } else if (
+        interior === "black" &&
+        wheels === "first" &&
+        paint === "red"
+      ) {
+        setPrice(
+          tesla[idx].price +
+            tesla[idx].salon.black.cost +
+            tesla[idx].wheels[0].cost +
+            tesla[idx].paint.red.cost
+        );
+      } else if (
+        interior === "black" &&
+        wheels === "second" &&
+        paint === "white"
+      ) {
+        setPrice(
+          tesla[idx].price +
+            tesla[idx].salon.black.cost +
+            tesla[idx].wheels[1].cost +
+            tesla[idx].paint.white.cost
+        );
+      } else if (
+        interior === "black" &&
+        wheels === "second" &&
+        paint === "blue"
+      ) {
+        setPrice(
+          tesla[idx].price +
+            tesla[idx].salon.black.cost +
+            tesla[idx].wheels[1].cost +
+            tesla[idx].paint.blue.cost
+        );
+      } else if (
+        interior === "black" &&
+        wheels === "second" &&
+        paint === "red"
+      ) {
+        setPrice(
+          tesla[idx].price +
+            tesla[idx].salon.black.cost +
+            tesla[idx].wheels[1].cost +
+            tesla[idx].paint.red.cost
+        );
+      } else if (
+        interior === "white" &&
+        wheels === "first" &&
+        paint === "white"
+      ) {
+        setPrice(
+          tesla[idx].price +
+            tesla[idx].salon.white.cost +
+            tesla[idx].wheels[0].cost +
+            tesla[idx].paint.white.cost
+        );
+      } else if (
+        interior === "white" &&
+        wheels === "first" &&
+        paint === "blue"
+      ) {
+        setPrice(
+          tesla[idx].price +
+            tesla[idx].salon.white.cost +
+            tesla[idx].wheels[0].cost +
+            tesla[idx].paint.blue.cost
+        );
+      } else if (
+        interior === "white" &&
+        wheels === "first" &&
+        paint === "red"
+      ) {
+        setPrice(
+          tesla[idx].price +
+            tesla[idx].salon.white.cost +
+            tesla[idx].wheels[0].cost +
+            tesla[idx].paint.red.cost
+        );
+      } else if (
+        interior === "white" &&
+        wheels === "second" &&
+        paint === "white"
+      ) {
+        setPrice(
+          tesla[idx].price +
+            tesla[idx].salon.white.cost +
+            tesla[idx].wheels[1].cost +
+            tesla[idx].paint.white.cost
+        );
+      } else if (
+        interior === "white" &&
+        wheels === "second" &&
+        paint === "blue"
+      ) {
+        setPrice(
+          tesla[idx].price +
+            tesla[idx].salon.white.cost +
+            tesla[idx].wheels[1].cost +
+            tesla[idx].paint.blue.cost
+        );
+      } else if (
+        interior === "white" &&
+        wheels === "second" &&
+        paint === "red"
+      ) {
+        setPrice(
+          tesla[idx].price +
+            tesla[idx].salon.white.cost +
+            tesla[idx].wheels[1].cost +
+            tesla[idx].paint.red.cost
+        );
       }
     }
-  }, [paint, wheels, interior])
+  }, [paint, wheels, interior]);
 
   // Set photos in slider by selected options
   useEffect(() => {
     if (carId) {
       const idx = parseInt(carId);
 
-      if (interior === "black" && wheels === "first" &&  paint === "white") {
-        setImages(tesla[idx].interior.black.wheels.aero.white)
-      } else if (interior === "black" && wheels === "first" &&  paint === "blue") {
-        setImages(tesla[idx].interior.black.wheels.aero.blue)
-      } else if (interior === "black" && wheels === "first" &&  paint === "red") {
-        setImages(tesla[idx].interior.black.wheels.aero.red)
-      } else if (interior === "black" && wheels === "second" &&  paint === "white") {
-        setImages(tesla[idx].interior.black.wheels.sport.white)
-      } else if (interior === "black" && wheels === "second" &&  paint === "blue") {
-        setImages(tesla[idx].interior.black.wheels.sport.blue)
-      } else if (interior === "black" && wheels === "second" &&  paint === "red") {
-        setImages(tesla[idx].interior.black.wheels.sport.red)
-      } else if (interior === "white" && wheels === "first" &&  paint === "white") {
-        setImages(tesla[idx].interior.white.wheels.aero.white)
-      } else if (interior === "white" && wheels === "first" &&  paint === "blue") {
-        setImages(tesla[idx].interior.white.wheels.aero.blue)
-      } else if (interior === "white" && wheels === "first" &&  paint === "red") {
-        setImages(tesla[idx].interior.white.wheels.aero.red)
-      } else if (interior === "white" && wheels === "second" &&  paint === "white") {
-        setImages(tesla[idx].interior.white.wheels.sport.white)
-      } else if (interior === "white" && wheels === "second" &&  paint === "blue") {
-        setImages(tesla[idx].interior.white.wheels.sport.blue)
-      } else if (interior === "white" && wheels === "second" &&  paint === "red") {
-        setImages(tesla[idx].interior.white.wheels.sport.red)
+      if (interior === "black" && wheels === "first" && paint === "white") {
+        setImages(tesla[idx].interior.black.wheels.aero.white);
+      } else if (
+        interior === "black" &&
+        wheels === "first" &&
+        paint === "blue"
+      ) {
+        setImages(tesla[idx].interior.black.wheels.aero.blue);
+      } else if (
+        interior === "black" &&
+        wheels === "first" &&
+        paint === "red"
+      ) {
+        setImages(tesla[idx].interior.black.wheels.aero.red);
+      } else if (
+        interior === "black" &&
+        wheels === "second" &&
+        paint === "white"
+      ) {
+        setImages(tesla[idx].interior.black.wheels.sport.white);
+      } else if (
+        interior === "black" &&
+        wheels === "second" &&
+        paint === "blue"
+      ) {
+        setImages(tesla[idx].interior.black.wheels.sport.blue);
+      } else if (
+        interior === "black" &&
+        wheels === "second" &&
+        paint === "red"
+      ) {
+        setImages(tesla[idx].interior.black.wheels.sport.red);
+      } else if (
+        interior === "white" &&
+        wheels === "first" &&
+        paint === "white"
+      ) {
+        setImages(tesla[idx].interior.white.wheels.aero.white);
+      } else if (
+        interior === "white" &&
+        wheels === "first" &&
+        paint === "blue"
+      ) {
+        setImages(tesla[idx].interior.white.wheels.aero.blue);
+      } else if (
+        interior === "white" &&
+        wheels === "first" &&
+        paint === "red"
+      ) {
+        setImages(tesla[idx].interior.white.wheels.aero.red);
+      } else if (
+        interior === "white" &&
+        wheels === "second" &&
+        paint === "white"
+      ) {
+        setImages(tesla[idx].interior.white.wheels.sport.white);
+      } else if (
+        interior === "white" &&
+        wheels === "second" &&
+        paint === "blue"
+      ) {
+        setImages(tesla[idx].interior.white.wheels.sport.blue);
+      } else if (
+        interior === "white" &&
+        wheels === "second" &&
+        paint === "red"
+      ) {
+        setImages(tesla[idx].interior.white.wheels.sport.red);
       }
     }
-  }, [paint, wheels, interior])
+  }, [paint, wheels, interior]);
 
-  // Set default 
+  // Set default
   useEffect(() => {
     if (carId) {
       const idx = parseInt(carId);
@@ -457,10 +607,12 @@ function OrderPage() {
             <Swiper
               className="main-swiper"
               ref={mainSwiperRef}
-              loop={true}
               effect="fade"
               navigation={true}
               modules={[Navigation, EffectFade]}
+              onSlideChange={(e) => {
+                setMainSwiperIdX(e.activeIndex);
+              }}
             >
               {images &&
                 images.map((item, idx) => (
@@ -468,12 +620,18 @@ function OrderPage() {
                     <img src={item.img} alt="tesla" />
                   </SwiperSlide>
                 ))}
+              <SlideToOrderSwiper
+                sideSwiperIdX={sideSwiperIdX}
+                mainSwiperIdX={mainSwiperIdX}
+              />
             </Swiper>
             <div className="main-swiper-vehicle-price-cont">
               <div className="main-swiper-vehicle-price-cont-icon">
                 <KeyboardArrowUpRoundedIcon />
               </div>
-              <p className="main-swiper-vehicle-price">${price.toLocaleString("en-US")} Vehicle Price</p>
+              <p className="main-swiper-vehicle-price">
+                ${price.toLocaleString("en-US")} Vehicle Price
+              </p>
             </div>
           </div>
         </Fade>
@@ -486,9 +644,9 @@ function OrderPage() {
             scrollbar={{ draggable: true }}
             modules={[Mousewheel, Scrollbar]}
             simulateTouch={false}
-            // onSlideChange={(e) => {
-            //   setactiveIndex(e.activeIndex);
-            // }}
+            onSlideChange={(e) => {
+              setSideSwiperIdX(e.activeIndex);
+            }}
           >
             <SwiperSlide>
               <div className="options-swiper-slide">
@@ -678,41 +836,45 @@ function OrderPage() {
       </div>
       <div className="order-page-responsive">
         <div className="order-page-options-swipers-wrapper">
-          <div className="order-page-responsive-img-cont">
-            <img src={images && images[0].img} alt="tesla" />
-          </div>
-          <div className="options-swiper-slide">
-            <div className="options-swiper-slide-intro">
-              <h2>{car?.model}</h2>
-              <p className="delivery">Est. Delivery: Feb - Mar 2023</p>
-              <div className="specifications-cont">
-                <div>
-                  <p>
-                    {car?.range}
-                    <span>mi</span>
-                  </p>
-                  <span>Range (EPA est.)</span>
-                </div>
-                <div>
-                  <p>
-                    {car?.topSpeed}
-                    <span>mph</span>
-                  </p>
-                  <span>Top Speed</span>
-                </div>
-                <div>
-                  <p>
-                    {car?.acceleration}
-                    <span>sec</span>
-                  </p>
-                  <span>0-60 mph</span>
-                </div>
-              </div>
-              <Button className="btn" width="145px" option="gray">
-                Feature Details
-              </Button>
+          <Fade triggerOnce>
+            <div className="order-page-responsive-img-cont">
+              <img src={images && images[0].img} alt="tesla" />
             </div>
-          </div>
+          </Fade>
+          <Fade direction="up" triggerOnce>
+            <div className="options-swiper-slide">
+              <div className="options-swiper-slide-intro">
+                <h2>{car?.model}</h2>
+                <p className="delivery">Est. Delivery: Feb - Mar 2023</p>
+                <div className="specifications-cont">
+                  <div>
+                    <p>
+                      {car?.range}
+                      <span>mi</span>
+                    </p>
+                    <span>Range (EPA est.)</span>
+                  </div>
+                  <div>
+                    <p>
+                      {car?.topSpeed}
+                      <span>mph</span>
+                    </p>
+                    <span>Top Speed</span>
+                  </div>
+                  <div>
+                    <p>
+                      {car?.acceleration}
+                      <span>sec</span>
+                    </p>
+                    <span>0-60 mph</span>
+                  </div>
+                </div>
+                <Button className="btn" width="145px" option="gray">
+                  Feature Details
+                </Button>
+              </div>
+            </div>
+          </Fade>
           <div className="order-page-responsive-img-cont">
             <img src={images && images[1].img} alt="tesla" />
           </div>
@@ -860,7 +1022,9 @@ function OrderPage() {
             <div className="main-swiper-vehicle-price-cont-icon">
               <KeyboardArrowUpRoundedIcon />
             </div>
-            <p className="main-swiper-vehicle-price">${price.toLocaleString("en-US")} Vehicle Price</p>
+            <p className="main-swiper-vehicle-price">
+              ${price.toLocaleString("en-US")} Vehicle Price
+            </p>
           </div>
         </div>
       </div>

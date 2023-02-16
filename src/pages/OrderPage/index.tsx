@@ -326,6 +326,462 @@ const tesla: TeslaType[] = [
       },
     },
   },
+  {
+    model: "Model Y",
+    range: 330,
+    topSpeed: 135,
+    acceleration: 4.8,
+    price: 54990,
+    paint: {
+      white: {
+        img: "../assets/option-icons/Paint_White.avif",
+        name: "White Multi-Coat",
+        cost: 0,
+      },
+      blue: {
+        img: "../assets/option-icons/Paint_Blue.avif",
+        name: "Deep Blue Metallic",
+        cost: 1000,
+      },
+      red: {
+        img: "../assets/option-icons/Paint_Red.avif",
+        name: "Red Multi-Coat",
+        cost: 2000,
+      },
+    },
+    wheels: [
+      {
+        img: "../assets/option-icons/gemini_wheels.avif",
+        name: "19’’ Gemini Wheels",
+        range: "Range (EPA est.) : 330mi",
+        cost: 0,
+      },
+      {
+        img: "../assets/option-icons/induction_wheels.avif",
+        name: "20’’ Induction Wheels",
+        range: "Range (est.) : 318mi",
+        cost: 2000,
+      },
+    ],
+    salon: {
+      black: {
+        img: "../assets/option-icons/Interior_Black.avif",
+        name: "All Black",
+        cost: 0,
+      },
+      white: {
+        img: "../assets/option-icons/Interior_White.avif",
+        name: "Black and White",
+        cost: 1000,
+      },
+    },
+    interior: {
+      black: {
+        wheels: {
+          aero: {
+            white: [
+              { img: "../assets/ModelY/slide-1-white-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-2-white-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-3-white-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-4-white-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-5-white-gemini-black.jpg" },
+            ],
+            blue: [
+              { img: "../assets/ModelY/slide-1-blue-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-2-blue-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-3-blue-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-4-blue-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-5-blue-gemini-black.jpg" },
+            ],
+            red: [
+              { img: "../assets/ModelY/slide-1-red-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-2-red-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-3-red-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-4-red-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-5-red-gemini-black.jpg" },
+            ],
+          },
+          sport: {
+            white: [
+              { img: "../assets/ModelY/slide-1-white-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-2-white-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-3-white-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-4-white-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-5-white-induction-black.jpg" },
+            ],
+            blue: [
+              { img: "../assets/ModelY/slide-1-blue-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-2-blue-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-3-blue-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-4-blue-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-5-blue-induction-black.jpg" },
+            ],
+            red: [
+              { img: "../assets/ModelY/slide-1-red-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-2-red-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-3-red-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-4-red-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-5-red-induction-black.jpg" },
+            ],
+          },
+        },
+      },
+      white: {
+        wheels: {
+          aero: {
+            white: [
+              { img: "../assets/ModelY/slide-1-white-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-2-white-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-3-white-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-4-white-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-5-white-induction-white.jpg" },
+            ],
+            blue: [
+              { img: "../assets/ModelY/slide-1-blue-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-2-blue-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-3-blue-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-4-blue-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-5-blue-induction-white.jpg" },
+            ],
+            red: [
+              { img: "../assets/ModelY/slide-1-red-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-2-red-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-3-red-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-4-red-gemini-black.jpg" },
+              { img: "../assets/ModelY/slide-5-red-induction-white.jpg" },
+            ],
+          },
+          sport: {
+            white: [
+              { img: "../assets/ModelY/slide-1-white-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-2-white-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-3-white-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-4-white-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-5-white-induction-white.jpg" },
+            ],
+            blue: [
+              { img: "../assets/ModelY/slide-1-blue-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-2-blue-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-3-blue-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-4-blue-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-5-blue-induction-white.jpg" },
+            ],
+            red: [
+              { img: "../assets/ModelY/slide-1-red-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-2-red-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-3-red-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-4-red-induction-black.jpg" },
+              { img: "../assets/ModelY/slide-5-red-induction-white.jpg" },
+            ],
+          },
+        },
+      },
+    },
+  },
+  {
+    model: "Model S",
+    range: 405,
+    topSpeed: 149,
+    acceleration: 3.1,
+    price: 94990,
+    paint: {
+      white: {
+        img: "../assets/option-icons/Paint_White.avif",
+        name: "White Multi-Coat",
+        cost: 0,
+      },
+      blue: {
+        img: "../assets/option-icons/Paint_Blue.avif",
+        name: "Deep Blue Metallic",
+        cost: 1500,
+      },
+      red: {
+        img: "../assets/option-icons/Paint_Red.avif",
+        name: "Red Multi-Coat",
+        cost: 2500,
+      },
+    },
+    wheels: [
+      {
+        img: "../assets/option-icons/ui_swat_whl_tempest.avif",
+        name: "19’’ Tempest Wheels",
+        range: "Range (EPA est.) : 405mi",
+        cost: 0,
+      },
+      {
+        img: "../assets/option-icons/21Arachnid.avif",
+        name: "21’’ Arachnid Wheels",
+        range: "Range (est.) : 375mi",
+        cost: 4500,
+      },
+    ],
+    salon: {
+      black: {
+        img: "../assets/option-icons/Interior_Black.avif",
+        name: "All Black",
+        cost: 0,
+      },
+      white: {
+        img: "../assets/option-icons/Interior_White.avif",
+        name: "Black and White",
+        cost: 2000,
+      },
+    },
+    interior: {
+      black: {
+        wheels: {
+          aero: {
+            white: [
+              { img: "../assets/ModelS/slide-1-white-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-2-white-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-3-white-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-4-white-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-5-white-tempest-black.jpg" },
+            ],
+            blue: [
+              { img: "../assets/ModelS/slide-1-blue-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-2-blue-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-3-blue-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-4-blue-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-5-blue-tempest-black.jpg" },
+            ],
+            red: [
+              { img: "../assets/ModelS/slide-1-red-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-2-red-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-3-red-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-4-red-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-5-red-tempest-black.jpg" },
+            ],
+          },
+          sport: {
+            white: [
+              { img: "../assets/ModelS/slide-1-white-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-2-white-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-3-white-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-4-white-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-5-white-arachnid-black.jpg" },
+            ],
+            blue: [
+              { img: "../assets/ModelS/slide-1-blue-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-2-blue-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-3-blue-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-4-blue-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-5-blue-arachnid-black.jpg" },
+            ],
+            red: [
+              { img: "../assets/ModelS/slide-1-red-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-2-red-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-3-red-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-4-red-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-5-red-arachnid-black.jpg" },
+            ],
+          },
+        },
+      },
+      white: {
+        wheels: {
+          aero: {
+            white: [
+              { img: "../assets/ModelS/slide-1-white-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-2-white-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-3-white-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-4-white-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-5-white-arachnid-white.jpg" },
+            ],
+            blue: [
+              { img: "../assets/ModelS/slide-1-blue-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-2-blue-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-3-blue-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-4-blue-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-5-blue-arachnid-white.jpg" },
+            ],
+            red: [
+              { img: "../assets/ModelS/slide-1-red-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-2-red-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-3-red-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-4-red-tempest-black.jpg" },
+              { img: "../assets/ModelS/slide-5-red-arachnid-white.jpg" },
+            ],
+          },
+          sport: {
+            white: [
+              { img: "../assets/ModelS/slide-1-white-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-2-white-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-3-white-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-4-white-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-5-white-arachnid-white.jpg" },
+            ],
+            blue: [
+              { img: "../assets/ModelS/slide-1-blue-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-2-blue-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-3-blue-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-4-blue-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-5-blue-arachnid-white.jpg" },
+            ],
+            red: [
+              { img: "../assets/ModelS/slide-1-red-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-2-red-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-3-red-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-4-red-arachnid-black.jpg" },
+              { img: "../assets/ModelS/slide-5-red-arachnid-white.jpg" },
+            ],
+          },
+        },
+      },
+    },
+  },
+  {
+    model: "Model X",
+    range: 351,
+    topSpeed: 149,
+    acceleration: 3.8,
+    price: 109990,
+    paint: {
+      white: {
+        img: "../assets/option-icons/Paint_White.avif",
+        name: "White Multi-Coat",
+        cost: 0,
+      },
+      blue: {
+        img: "../assets/option-icons/Paint_Blue.avif",
+        name: "Deep Blue Metallic",
+        cost: 1500,
+      },
+      red: {
+        img: "../assets/option-icons/Paint_Red.avif",
+        name: "Red Multi-Coat",
+        cost: 2500,
+      },
+    },
+    wheels: [
+      {
+        img: "../assets/option-icons/20Cyberstream.avif",
+        name: "20’’ Cyberstream Wheels",
+        range: "Range (est.) : 351mi",
+        cost: 0,
+      },
+      {
+        img: "../assets/option-icons/22Turbine.avif",
+        name: "22’’ Turbine Wheels",
+        range: "Range (est.) : 332mi",
+        cost: 5500,
+      },
+    ],
+    salon: {
+      black: {
+        img: "../assets/option-icons/Interior_Black.avif",
+        name: "All Black",
+        cost: 0,
+      },
+      white: {
+        img: "../assets/option-icons/Interior_White.avif",
+        name: "Black and White",
+        cost: 2000,
+      },
+    },
+    interior: {
+      black: {
+        wheels: {
+          aero: {
+            white: [
+              { img: "../assets/ModelX/slide-1-white-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-2-white-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-3-white-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-4-white-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-5-white-syberstream-black.jpg" },
+            ],
+            blue: [
+              { img: "../assets/ModelX/slide-1-blue-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-2-blue-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-3-blue-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-4-blue-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-5-blue-syberstream-black.jpg" },
+            ],
+            red: [
+              { img: "../assets/ModelX/slide-1-red-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-2-red-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-3-red-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-4-red-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-5-red-syberstream-black.jpg" },
+            ],
+          },
+          sport: {
+            white: [
+              { img: "../assets/ModelX/slide-1-white-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-2-white-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-3-white-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-4-white-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-5-white-turbine-black.jpg" },
+            ],
+            blue: [
+              { img: "../assets/ModelX/slide-1-blue-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-2-blue-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-3-blue-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-4-blue-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-5-blue-turbine-black.jpg" },
+            ],
+            red: [
+              { img: "../assets/ModelX/slide-1-red-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-2-red-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-3-red-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-4-red-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-5-red-turbine-black.jpg" },
+            ],
+          },
+        },
+      },
+      white: {
+        wheels: {
+          aero: {
+            white: [
+              { img: "../assets/ModelX/slide-1-white-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-2-white-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-3-white-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-4-white-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-5-white-turbine-white.jpg" },
+            ],
+            blue: [
+              { img: "../assets/ModelX/slide-1-blue-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-2-blue-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-3-blue-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-4-blue-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-5-blue-turbine-white.jpg" },
+            ],
+            red: [
+              { img: "../assets/ModelX/slide-1-red-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-2-red-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-3-red-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-4-red-syberstream-black.jpg" },
+              { img: "../assets/ModelX/slide-5-red-turbine-white.jpg" },
+            ],
+          },
+          sport: {
+            white: [
+              { img: "../assets/ModelX/slide-1-white-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-2-white-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-3-white-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-4-white-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-5-white-turbine-white.jpg" },
+            ],
+            blue: [
+              { img: "../assets/ModelX/slide-1-blue-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-2-blue-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-3-blue-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-4-blue-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-5-blue-turbine-white.jpg" },
+            ],
+            red: [
+              { img: "../assets/ModelX/slide-1-red-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-2-red-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-3-red-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-4-red-turbine-black.jpg" },
+              { img: "../assets/ModelX/slide-5-red-turbine-white.jpg" },
+            ],
+          },
+        },
+      },
+    },
+  },
 ];
 
 interface ImagesType {

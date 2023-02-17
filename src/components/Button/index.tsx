@@ -1,14 +1,14 @@
 import "./style.scss";
 
 interface Props {
-  className: string;
+  className?: string;
   children: string;
-  width: string;
-  option: string;
+  width?: string;
+  option?: string;
   action?: () => void;
 }
 
-function Button({ className, children, width, option, action }: Props) {
+function Button({ className, children, width = "100%", option, action }: Props) {
   const STYLE =
     option === "black" ? "black" : option === "gray" ? "gray" : "blue";
 

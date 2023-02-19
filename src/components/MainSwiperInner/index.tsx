@@ -83,8 +83,8 @@ function MainSwiperInner({ activeIndex }: Props) {
     didMountRef.current++;
   }, [activeIndex]);
 
-  const navigateHandler = (): void => {
-    navigate(`/order/${swiperData[activeIndex].link}`);
+  const navigateHandler = (path: string): void => {
+    navigate(`/${path}/${swiperData[activeIndex].link}`);
   };
 
   return (
@@ -108,7 +108,7 @@ function MainSwiperInner({ activeIndex }: Props) {
               className={`${isHide && "hide"}`}
               width="264px"
               option="black"
-              action={navigateHandler}
+              action={() => navigateHandler("order")}
             >
               Custom Order
             </Button>
@@ -118,7 +118,7 @@ function MainSwiperInner({ activeIndex }: Props) {
               className={`${isHide && "hide"}`}
               width="264px"
               option="gray"
-              action={() => null}
+              action={() => navigateHandler("drive")}
             >
               Demo Drive
             </Button>

@@ -1,0 +1,56 @@
+.drive-page {
+  .drive-page-cont {
+    margin: 0 auto;
+    padding-top: 128px;
+    max-width: 890px;
+    color: #171a20;
+
+    .drive-page-cont-head {
+      h1 {
+        font-size: 40px;
+        font-weight: 400;
+      }
+
+      p {
+        max-width: 792px;
+        padding-top: 8px;
+        color: #393c41;
+        font-size: 14px;
+        font-weight: 100;
+        line-height: 20px;
+      }
+    }
+
+    .drive-page-cont-slider {
+      .drive-page-cont-slider-photo {
+        img {
+          width: 100%;
+        }
+      }
+
+      .drive-page-cont-slider-btns {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 16px;
+
+        .btn {
+          border: 1px solid #a2a3a5;
+          transition: 0s;
+
+          &.active {
+            border: 3px solid #3e6ae1;
+          }
+        }
+      }
+    }
+
+    .drive-page-form-cont {
+        margin-top: 105px;
+
+        h2 {
+            font-size: 28px;
+            font-weight: 400;
+        }
+    }
+  }
+}

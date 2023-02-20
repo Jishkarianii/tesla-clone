@@ -1,0 +1,90 @@
+.phone-number-input {
+  .title {
+    color: #5c5e62;
+    font-size: 14px;
+    padding-bottom: 8px;
+  }
+
+  .select-phone-code {
+    position: relative;
+    padding: 11px 12px;
+    display: flex;
+    align-items: center;
+    color: #393c41;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background-color: #f4f4f4;
+    transition: 0.4s;
+
+    &.focused {
+      border: 1px solid rgb(210, 210, 210);
+    }
+
+    &.error {
+      border: 1px solid #b74134;
+    }
+
+    .select-phone-code-head {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      span {
+        white-space: nowrap;
+      }
+
+      &:focus {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      &:focus ~ .select-phone-code-options {
+        visibility: visible;
+        top: 58px;
+        opacity: 1;
+      }
+    }
+
+    input {
+      margin-left: 5px;
+      width: 100%;
+      border: none;
+      outline: none;
+      color: #393c41;
+      background: none;
+      font-size: 14px;
+    }
+
+    .select-phone-code-options {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      max-height: 190px;
+      visibility: hidden;
+      border-radius: 6px;
+      transition: 0.4s;
+      cursor: pointer;
+      overflow: auto;
+      opacity: 0;
+
+      p {
+        padding: 10px 12px;
+        color: #393c41;
+        background-color: #f4f4f4;
+
+        &:hover {
+          background-color: #eaeaea;
+        }
+      }
+    }
+  }
+
+  .error-msg {
+    padding-top: 8px;
+    color: #b74134;
+    font-size: 12px;
+  }
+}

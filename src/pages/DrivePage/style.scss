@@ -1,4 +1,6 @@
 .drive-page {
+  padding: 0 15px;
+
   .drive-page-cont {
     margin: 0 auto;
     padding-top: 128px;
@@ -45,12 +47,101 @@
     }
 
     .drive-page-form-cont {
-        margin-top: 105px;
+      margin-top: 105px;
+      margin-bottom: 80px;
+
+      h2 {
+        font-size: 28px;
+        font-weight: 400;
+      }
+
+      form {
+        margin-top: 70px;
+        max-width: 660px;
+
+        .form-cont {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 25px 30px;
+        }
+
+        .checkbox-cont {
+          margin-top: 60px;
+          display: flex;
+          align-items: center;
+
+          &:nth-child(3) {
+            margin-top: 15px;
+          }
+
+          p {
+            margin-left: 10px;
+            font-size: 14px;
+          }
+        }
+
+        .disclaimer-txt {
+          margin: 32px 0;
+          color: #393c41;
+          font-size: 12px;
+          font-weight: 100;
+          line-height: 20px;
+        }
+
+        .btn {
+          width: 318px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .drive-page {
+    .drive-page-cont {
+      .drive-page-cont-slider {
+        .drive-page-cont-slider-btns {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .drive-page {
+    .drive-page-cont {
+      .drive-page-cont-head {
+        h1 {
+          font-size: 28px;
+        }
+      }
+
+      .drive-page-form-cont {
+        margin-top: 80px;
+        margin-bottom: 70px;
 
         h2 {
-            font-size: 28px;
-            font-weight: 400;
+          font-size: 24px;
         }
+
+        form {
+          margin-top: 50px;
+
+          .form-cont {
+            grid-template-columns: 1fr;
+            gap: 25px;
+          }
+
+          .checkbox-cont {
+            margin-top: 50px;
+          }
+
+          .btn {
+            width: 100% !important;
+          }
+        }
+      }
     }
   }
 }

@@ -5,18 +5,38 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import Input from "../../components/Input";
+import Select from "../../components/Select";
+import PhoneNumberInput from "../../components/PhoneNumberInput";
+import Checkbox from "../../components/Checkbox";
+import { regionList } from '../../data/allCountryRegion'
 
-const tesla = [
+interface Tesla {
+  img: string;
+}
+const tesla: Tesla[] = [
   { img: "../../assets/Model3/model-3-demo.jpg" },
   { img: "../../assets/ModelY/model-Y-demo.jpg" },
   { img: "../../assets/ModelS/model-S-demo.jpg" },
   { img: "../../assets/ModelX/model-X-demo.jpg" },
 ];
 
+export interface ContactPreference {
+  name: string;
+}
+
+const contactPreference: ContactPreference[] = [
+  { name: "Phone" },
+  { name: "Email" },
+];
+
 function DrivePage() {
   const { carId } = useParams<string>();
   const [selectedCarIdx, setSelectedCarIdx] = useState<number>(0);
   const [name, setName] = useState<string>("");
+  const [select, setSelect] = useState<string>(contactPreference[0].name);
+  const [selectRegion, setSelectRegion] = useState<string>(regionList[229].name);
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [checkbox, setCheckbox] = useState<boolean>(false);
 
   useEffect(() => {
     if (carId) {
@@ -36,7 +56,7 @@ function DrivePage() {
           </p>
         </div>
         <div className="drive-page-cont-slider">
-          <Fade>
+          <Fade triggerOnce>
             <div className="drive-page-cont-slider-photo">
               <img src={tesla[selectedCarIdx].img} alt="tesla" />
             </div>
@@ -75,14 +95,75 @@ function DrivePage() {
         <div className="drive-page-form-cont">
           <h2>Contact Information</h2>
           <form>
-            <Input
-              title="First Name"
-              errorMsg="required"
-              value={name}
-              onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                setName(e.currentTarget.value)
-              }
-            />
+            <div className="form-cont">
+              <Input
+                title="First Name"
+                errorMsg="required"
+                value={name}
+                onChange={(e: React.FormEvent<HTMLInputElement>) =>
+                  setName(e.currentTarget.value)
+                }
+              />
+              <Input
+                title="Last Name"
+                errorMsg="required"
+                value={name}
+                onChange={(e: React.FormEvent<HTMLInputElement>) =>
+                  setName(e.currentTarget.value)
+                }
+              />
+              <Select
+                title="Contact Preference"
+                state={select}
+                setState={setSelect}
+                data={contactPreference}
+              />
+              <PhoneNumberInput
+                title="Phone Number"
+                state={phoneNumber}
+                setState={setPhoneNumber}
+                errorMsg="required"
+              />
+              <Input
+                title="Email Address"
+                type="email"
+                errorMsg="required"
+                value={name}
+                onChange={(e: React.FormEvent<HTMLInputElement>) =>
+                  setName(e.currentTarget.value)
+                }
+              />
+              <Select
+                title="Region"
+                state={selectRegion}
+                setState={setSelectRegion}
+                data={regionList}
+              />
+              <Input
+                title="Zip Code"
+                errorMsg="required"
+                value={name}
+                onChange={(e: React.FormEvent<HTMLInputElement>) =>
+                  setName(e.currentTarget.value)
+                }
+              />
+            </div>
+            <div className="checkbox-cont">
+              <Checkbox state={checkbox} setState={setCheckbox} />
+              <p>I’m interested in solar and Powerwall</p>
+            </div>
+            <div className="checkbox-cont">
+              <Checkbox state={checkbox} setState={setCheckbox} />
+              <p>Get Tesla Updates</p>
+            </div>
+            <p className="disclaimer-txt">
+              By clicking "Submit & Continue" I agree to share the provided
+              information with Tesla to be contacted with more details or offers
+              about Tesla products. I understand these calls or texts may use
+              computer-assisted dialing or pre-recorded messages. This consent
+              is not a condition of the demo drive.
+            </p>
+            <Button>Submit and Continue</Button>
           </form>
         </div>
       </div>

@@ -68,6 +68,7 @@
       transition: 0.4s;
       cursor: pointer;
       overflow: auto;
+      z-index: 99;
       opacity: 0;
 
       p {

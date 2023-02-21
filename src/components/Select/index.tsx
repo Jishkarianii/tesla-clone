@@ -8,8 +8,6 @@ interface Props {
   setState: (value: string) => void;
 }
 
-// add scrollbar for much data 
-
 function Select({ title, state, data, setState }: Props) {
   return (
     <div className="select">

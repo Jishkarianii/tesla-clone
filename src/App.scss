@@ -13,3 +13,8 @@
 a {
   color: unset;
 }
+
+*::selection {
+  color: white;
+  background-color: #171A20;
+}

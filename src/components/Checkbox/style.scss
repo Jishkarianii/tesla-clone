@@ -1,0 +1,26 @@
+.checkbox {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  border: 1px solid #5c5e62;
+  cursor: pointer;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    fill: #393c41;
+    stroke: #393c41;
+    transition: 0.2s;
+
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  &.checked svg {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

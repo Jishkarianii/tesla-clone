@@ -4,13 +4,13 @@ import { phoneCodeList } from "../../data/phoneNumberCode";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 
 interface Props {
+  id: string;
   title: string;
-  state: string;
-  setState: (value: string) => void;
+  setValue: (id: string, value: string) => void;
   errorMsg: string;
 }
 
-function PhoneNumberInput({ title, state, setState, errorMsg }: Props) {
+function PhoneNumberInput({ id, title, setValue, errorMsg }: Props) {
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [code, setCode] = useState<string>(phoneCodeList[230].dial_code);
   const [number, setNumber] = useState<string>("");
@@ -19,7 +19,7 @@ function PhoneNumberInput({ title, state, setState, errorMsg }: Props) {
   );
 
   useEffect(() => {
-    setState(`${code}${number}`);
+    setValue(id, `${code}${number}`);
   }, [code, number]);
 
   return (

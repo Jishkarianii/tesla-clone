@@ -15,6 +15,7 @@ function Button({ className, children, width = "100%", option, action }: Props) 
   return (
     <button
       className={`btn ${className} ${STYLE}`}
+      type="submit"
       style={{ width }}
       onClick={action}
       title={children}

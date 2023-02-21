@@ -2,15 +2,16 @@ import "./style.scss";
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
 
 interface Props {
-  state: boolean;
-  setState: (state: boolean) => void;
+  id: string;
+  value: boolean;
+  setValue: (id: string, value: boolean) => void;
 }
 
-function Checkbox({ state, setState }: Props) {
+function Checkbox({ id, value, setValue }: Props) {
   return (
     <div
-      className={`checkbox ${state ? "checked" : ""}`}
-      onClick={() => setState(!state)}
+      className={`checkbox ${value ? "checked" : ""}`}
+      onClick={() => setValue(id, !value)}
     >
       <CheckRoundedIcon />
     </div>

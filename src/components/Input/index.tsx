@@ -1,6 +1,8 @@
 import "./style.scss";
 
 interface Props {
+  id: string;
+  name: string;
   title: string;
   type?: string;
   value: string;
@@ -8,12 +10,12 @@ interface Props {
   errorMsg: string;
 }
 
-function Input({ title, type = "text", value, onChange, errorMsg }: Props) {
+function Input({ id, name, title, type = "text", value, onChange, errorMsg }: Props) {
   return (
     <div className="input">
       <label>
         <p className="title">{title}</p>
-        <input className={errorMsg ? "error" : ""} type={type} value={value} onChange={onChange} />
+        <input id={id} name={name} className={errorMsg ? "error" : ""} type={type} value={value} onChange={onChange} />
       </label>
       {errorMsg && <p className="error-msg">{errorMsg}</p>}
     </div>

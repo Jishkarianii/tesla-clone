@@ -21,6 +21,15 @@ function PhoneNumberInput({ id, title, setValue, errorMsg }: Props) {
   useEffect(() => {
     setValue(id, `${code}${number}`);
   }, [code, number]);
+  
+  // Enter only numbers
+  const numbersHandler = (value: string): void => {
+    const phoneNumRegex = /[0-9]$/
+
+    if (phoneNumRegex.test(value) || value === "") {
+      setNumber(value)
+    }
+  }
 
   return (
     <div className="phone-number-input">
@@ -42,7 +51,7 @@ function PhoneNumberInput({ id, title, setValue, errorMsg }: Props) {
           value={number}
           placeholder="Phone Number"
           onChange={(e: React.FormEvent<HTMLInputElement>) =>
-            setNumber(e.currentTarget.value)
+            numbersHandler(e.currentTarget.value)
           }
         />
         <div className="select-phone-code-options">

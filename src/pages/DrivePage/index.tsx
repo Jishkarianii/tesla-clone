@@ -8,7 +8,9 @@ import Input from "../../components/Input";
 import Select from "../../components/Select";
 import PhoneNumberInput from "../../components/PhoneNumberInput";
 import Checkbox from "../../components/Checkbox";
-import { regionList } from '../../data/allCountryRegion'
+import { regionList } from "../../data/allCountryRegion";
+import { useFormik } from "formik";
+import { contactSchema } from "../../schemas";
 
 interface Tesla {
   img: string;
@@ -32,11 +34,25 @@ const contactPreference: ContactPreference[] = [
 function DrivePage() {
   const { carId } = useParams<string>();
   const [selectedCarIdx, setSelectedCarIdx] = useState<number>(0);
-  const [name, setName] = useState<string>("");
-  const [select, setSelect] = useState<string>(contactPreference[0].name);
-  const [selectRegion, setSelectRegion] = useState<string>(regionList[229].name);
-  const [phoneNumber, setPhoneNumber] = useState<string>("");
-  const [checkbox, setCheckbox] = useState<boolean>(false);
+
+  const { values, errors, touched, handleChange, setFieldValue, handleSubmit } =
+    useFormik({
+      initialValues: {
+        firstName: "",
+        lastName: "",
+        contactPreference: contactPreference[0].name,
+        phoneNumber: "",
+        emailAddress: "",
+        region: regionList[229].name,
+        zipCode: "",
+        interested: false,
+        getUpdates: true,
+      },
+      validationSchema: contactSchema,
+      onSubmit: (values) => {
+        console.log(values);
+      },
+    });
 
   useEffect(() => {
     if (carId) {
@@ -94,66 +110,90 @@ function DrivePage() {
         </div>
         <div className="drive-page-form-cont">
           <h2>Contact Information</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form-cont">
               <Input
+                id="firstName"
+                name="firstName"
                 title="First Name"
-                errorMsg="required"
-                value={name}
-                onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                  setName(e.currentTarget.value)
+                errorMsg={
+                  errors.firstName && touched.firstName ? errors.firstName : ""
                 }
+                value={values.firstName}
+                onChange={handleChange}
               />
               <Input
+                id="lastName"
+                name="lastName"
                 title="Last Name"
-                errorMsg="required"
-                value={name}
-                onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                  setName(e.currentTarget.value)
+                errorMsg={
+                  errors.lastName && touched.lastName ? errors.lastName : ""
                 }
+                value={values.lastName}
+                onChange={handleChange}
               />
               <Select
+                id="contactPreference"
                 title="Contact Preference"
-                state={select}
-                setState={setSelect}
+                value={values.contactPreference}
+                setValue={setFieldValue}
                 data={contactPreference}
               />
               <PhoneNumberInput
+                id="phoneNumber"
                 title="Phone Number"
-                state={phoneNumber}
-                setState={setPhoneNumber}
-                errorMsg="required"
-              />
-              <Input
-                title="Email Address"
-                type="email"
-                errorMsg="required"
-                value={name}
-                onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                  setName(e.currentTarget.value)
+                setValue={setFieldValue}
+                errorMsg={
+                  errors.phoneNumber && touched.phoneNumber
+                    ? errors.phoneNumber
+                    : ""
                 }
               />
+              <Input
+                id="emailAddress"
+                name="emailAddress"
+                title="Email Address"
+                type="email"
+                errorMsg={
+                  errors.emailAddress && touched.emailAddress
+                    ? errors.emailAddress
+                    : ""
+                }
+                value={values.emailAddress}
+                onChange={handleChange}
+              />
               <Select
+                id="region"
                 title="Region"
-                state={selectRegion}
-                setState={setSelectRegion}
+                value={values.region}
+                setValue={setFieldValue}
                 data={regionList}
               />
               <Input
+                id="zipCode"
+                name="zipCode"
                 title="Zip Code"
-                errorMsg="required"
-                value={name}
-                onChange={(e: React.FormEvent<HTMLInputElement>) =>
-                  setName(e.currentTarget.value)
+                errorMsg={
+                  errors.zipCode && touched.zipCode ? errors.zipCode : ""
                 }
+                value={values.zipCode}
+                onChange={handleChange}
               />
             </div>
             <div className="checkbox-cont">
-              <Checkbox state={checkbox} setState={setCheckbox} />
+              <Checkbox
+                id="interested"
+                value={values.interested}
+                setValue={setFieldValue}
+              />
               <p>I’m interested in solar and Powerwall</p>
             </div>
             <div className="checkbox-cont">
-              <Checkbox state={checkbox} setState={setCheckbox} />
+              <Checkbox
+                id="getUpdates"
+                value={values.getUpdates}
+                setValue={setFieldValue}
+              />
               <p>Get Tesla Updates</p>
             </div>
             <p className="disclaimer-txt">

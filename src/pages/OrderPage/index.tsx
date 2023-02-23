@@ -1054,6 +1054,10 @@ function OrderPage() {
     setInterior(interior);
   };
 
+  const submitHandler = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="order-page">
       <Header />
@@ -1281,7 +1285,12 @@ function OrderPage() {
                       <span>See Details</span>
                     </div>
                   </div>
-                  <Button className="btn" width="288px" option="blue">
+                  <Button
+                    className="btn"
+                    width="288px"
+                    option="blue"
+                    action={submitHandler}
+                  >
                     Continue to Payment
                   </Button>
                 </div>
@@ -1469,7 +1478,12 @@ function OrderPage() {
                   <span>See Details</span>
                 </div>
               </div>
-              <Button className="btn" width="100%" option="blue">
+              <Button
+                className="btn"
+                width="100%"
+                option="blue"
+                action={submitHandler}
+              >
                 Continue to Payment
               </Button>
             </div>

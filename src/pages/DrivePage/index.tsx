@@ -35,6 +35,12 @@ function DrivePage() {
   const { carId } = useParams<string>();
   const [selectedCarIdx, setSelectedCarIdx] = useState<number>(0);
 
+  useEffect(() => {
+    if (carId) {
+      setSelectedCarIdx(parseInt(carId));
+    }
+  }, []);
+
   const { values, errors, touched, handleChange, setFieldValue, handleSubmit } =
     useFormik({
       initialValues: {
@@ -49,16 +55,11 @@ function DrivePage() {
         getUpdates: true,
       },
       validationSchema: contactSchema,
-      onSubmit: (values) => {
+      onSubmit: (values, actions) => {
         console.log(values);
+        actions.resetForm();
       },
     });
-
-  useEffect(() => {
-    if (carId) {
-      setSelectedCarIdx(parseInt(carId));
-    }
-  }, []);
 
   return (
     <div className="drive-page">

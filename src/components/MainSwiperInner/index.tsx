@@ -73,7 +73,7 @@ function MainSwiperInner({ activeIndex }: Props) {
 
   // Change slide data with animation
   useEffect(() => {
-    if (didMountRef.current > 1) {
+    if (didMountRef.current > 0) {
       setIsHide(true);
       setTimeout(() => {
         setIndex(activeIndex);
